@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "id": "payments",
+      "name_en": "Payment Gateways",
+      "name_fa": "درگاه‌های پرداخت",
+      "description_en": "Crypto, local fiat, and billing integrations.",
+      "description_fa": "اتصال رمزارز، درگاه‌های ریالی و مالی."
+    },
+    {
+      "id": "analytics",
+      "name_en": "Analytics & Tracking",
+      "name_fa": "آمار و رهگیری",
+      "description_en": "User engagement, event logging, and metric dashboards.",
+      "description_fa": "رهگیری رویدادها، ترافیک و تحلیل کاربران."
+    },
+    {
+      "id": "services",
+      "name_en": "External Services & APIs",
+      "name_fa": "سرویس‌ها و وب‌سرویس‌های خارجی",
+      "description_en": "AI endpoints, webhooks, weather, and third-party APIs.",
+      "description_fa": "هوش مصنوعی، وب‌هوک، آب‌وهوا و APIهای متفرقه."
+    },
+    {
+      "id": "admin",
+      "name_en": "Administration & Moderation",
+      "name_fa": "مدیریت و نظارت",
+      "description_en": "Anti-spam, user bans, channel subscriptions, and admin alerts.",
+      "description_fa": "ضداسپم، بن کاربران، عضویت اجباری و هشدارهای ادمین."
+    },
+    {
+      "id": "messengers",
+      "name_en": "Chat & Messenger Connectors",
+      "name_fa": "پیام‌رسان‌ها و ارتباطات",
+      "description_en": "Live support chat, tickets, bridge between platforms.",
+      "description_fa": "پشتیبانی آنلاین، تیکتینگ و ارتباط بین پلتفرم‌ها."
+    },
+    {
+      "id": "community",
+      "name_en": "Community & Utilities",
+      "name_fa": "کاربردی و جامعه",
+      "description_en": "Games, utility nodes, calculators, and miscellaneous extensions.",
+      "description_fa": "بازی‌ها، ابزارهای محاسباتی و اکستنشن‌های عمومی."
+    }
+  ]
+}
