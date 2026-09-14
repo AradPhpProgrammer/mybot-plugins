@@ -1,0 +1,64 @@
+{
+  "name": "AI Assistant Bot (OpenAI / Claude / DeepSeek)",
+  "description": "Telegram bot connected to an LLM endpoint via HTTP Request node. Accepts user prompts, forwards them to AI API, and responds dynamically.",
+  "version": "1.0.0",
+  "category": "ai-agents",
+  "nodes": [
+    {
+      "id": "trigger_start",
+      "type": "trigger_start",
+      "position": { "x": 100, "y": 200 },
+      "data": { "extract_referral": false }
+    },
+    {
+      "id": "welcome_message",
+      "type": "action_send_message",
+      "position": { "x": 420, "y": 200 },
+      "data": {
+        "media_type": "text",
+        "text": "👋 Hello $first_name!\n\nI am your AI Assistant powered by MyBot Studio. Send me any question or prompt, and I'll generate a response for you."
+      }
+    },
+    {
+      "id": "trigger_user_msg",
+      "type": "trigger_message",
+      "position": { "x": 100, "y": 420 },
+      "data": { "match_mode": "any" }
+    },
+    {
+      "id": "ai_request",
+      "type": "action_http_request",
+      "position": { "x": 420, "y": 420 },
+      "data": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "output_variable": "ai_reply",
+        "headers": {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer YOUR_API_KEY_HERE"
+        },
+        "body": {
+          "model": "gpt-4o-mini",
+          "messages": [
+            { "role": "system", "content": "You are a helpful Telegram AI assistant." },
+            { "role": "user", "content": "$payload" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "send_ai_reply",
+      "type": "action_send_message",
+      "position": { "x": 760, "y": 420 },
+      "data": {
+        "media_type": "text",
+        "text": "$ai_reply"
+      }
+    }
+  ],
+  "edges": [
+    { "id": "e1-2", "source": "trigger_start", "target": "welcome_message" },
+    { "id": "e3-4", "source": "trigger_user_msg", "target": "ai_request" },
+    { "id": "e4-5", "source": "ai_request", "target": "send_ai_reply" }
+  ]
+}
